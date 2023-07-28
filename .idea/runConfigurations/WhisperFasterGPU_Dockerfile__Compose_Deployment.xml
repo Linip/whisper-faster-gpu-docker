@@ -1,0 +1,27 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="WhisperFasterGPU.Dockerfile: Compose Deployment" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="whisper-faster-gpu" />
+        <option name="buildOnly" value="true" />
+        <option name="containerName" value="whisper-faster-gpu" />
+        <option name="commandLineOptions" value="--runtime=nvidia" />
+        <option name="showCommandPreview" value="true" />
+        <option name="sourceFilePath" value="Dockerfile" />
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/io" />
+              <option name="hostPath" value="$PROJECT_DIR$/io" />
+            </DockerVolumeBindingImpl>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/root/.cache/huggingface" />
+              <option name="hostPath" value="$PROJECT_DIR$/whisper-faster-models" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>
